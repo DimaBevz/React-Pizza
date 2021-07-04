@@ -1,0 +1,19 @@
+  // // когда у нас первый раз отрендериться "App", отправиться вот такой вот запрос 
+  // React.useEffect(() => {
+  //   fetch('http://localhost:3000/db.json')
+  //     .then((resp) => resp.json())
+
+  //     // и в итоге, когда получим всё, что нам нужно, то сохраним это в стейт
+  //     .then((json) => {
+  //       setPizzas(json.pizzas);
+  //     });
+  // }, []);
+
+
+
+  React.useEffect(() => {
+    axios.get('http://localhost:3000/db.json')
+      .then(({ data }) => {
+        setPizzas(data.pizzas);
+      });
+  }, []);

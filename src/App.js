@@ -1,0 +1,23 @@
+import React from 'react';
+import { Route } from 'react-router';
+
+import Header from './components/Header/Header';
+import { Home, Cart } from './pages';
+
+
+function App() {
+
+  return(
+    <div className="wrapper">
+   
+       <Header/>
+         <div className="content">
+           <Route path="/" component={Home} exact />
+           <Route path="/cart" component={Cart} />
+         </div>
+    </div>
+  );
+
+}
+
+export default App;
